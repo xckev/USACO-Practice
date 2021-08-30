@@ -4,6 +4,8 @@ LANG: C++
 TASK: wormhole
 */
 
+//Categories: Complete search + recursion
+
 #include <iostream>
 #include <algorithm>
 #include <map>
@@ -37,7 +39,7 @@ void solve(){
         f++;
     }
     if(f == n+1){
-        if(check()){
+        if(check()){ // recursion
             answer++;
         }
     }
@@ -66,7 +68,7 @@ int main(){
         used[i] = 0;
         //partner[i] = 0;
     }
-
+    //complete search
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= n; j++){
             if(i != j && y[i] == y[j] && x[i] <= x[j] && (nxt[i] == 0 || x[j] < x[nxt[i]])){
