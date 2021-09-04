@@ -4,6 +4,8 @@ LANG: C++
 TASK: barn1
 */
 
+//Greedy: take the m-1 largest gaps
+
 #include <iostream>
 #include <algorithm>
 #include <map>
