@@ -11,53 +11,72 @@ TASK: ariprog
 #include <algorithm>
 #include <map>
 #include <math.h>
+#include <vector>
 #include <set>
 #include <fstream>
 using namespace std;
 
 int n, m;
-bool bisquare[125000];
+//bool bisquare[125000];
 set<int> good;
 
+
 int main(){
-    ofstream fout ("ariprog.out");
-    ifstream fin ("ariprog.in");
-    fin >> n >> m;
+    //ofstream fout ("ariprog.out");
+    //ifstream fin ("ariprog.in");
+    cin >> n >> m;
 
     for(int i = 0; i <= m; i++){
         for(int j = i; j <= m; j++){
             int ind = pow(i, 2) + pow(j, 2);
-            bisquare[ind] = true;
+            //bisquare[ind] = true;
             good.insert(ind);
         }
     }
+
+    vector<int> bisquares(good.begin(), good.end());
     //cout <<  "size: " << good.size() << endl;
     //sort(good.begin(), good.end());
     //int maxm = (m*m)/3;
 
     bool any = false;
     for(int d = 1; d < 2000; d++){
-        for(int elem : good){
-            //int elem = good[start];
-            int start = elem;
+        for(int i = 0; i < bisquares.size(); i++){
+            int elem = bisquares[i];
+            int start = bisquares[i];
             int elemnum = 1;
             while(elemnum <= n){
                 elem += d;
-                if(!bisquare[elem]){
-                    break;
+
+                bool found = false;
+                int next = 1;
+                while(bisquares[i+next] <= elem){
+                    if(bisquares[next+i] == elem){
+                        found = true;
+                        break;
+                    }
+                    else{
+                        next++;
+                    }
                 }
-                else{
+
+                if(found){
                     elemnum++;
                     if(elemnum == n){
                         any = true;
-                        fout << start << " " << d << endl;
+                        cout << start << " " << d << endl;
                     }
                 }
+                else{
+                    break;
+                }
+                
+                
             }
         }
     }
     if(!any){
-        fout << "NONE" << endl;
+        cout << "NONE" << endl;
     }
 
 }
