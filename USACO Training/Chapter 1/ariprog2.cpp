@@ -19,12 +19,13 @@ using namespace std;
 int n, m;
 //bool bisquare[125000];
 set<int> good;
+vector<pair<int, int>> v;
 
 
 int main(){
-    //ofstream fout ("ariprog.out");
-    //ifstream fin ("ariprog.in");
-    cin >> n >> m;
+    ofstream fout ("ariprog.out");
+    ifstream fin ("ariprog.in");
+    fin >> n >> m;
 
     for(int i = 0; i <= m; i++){
         for(int j = i; j <= m; j++){
@@ -64,7 +65,8 @@ int main(){
                     elemnum++;
                     if(elemnum == n){
                         any = true;
-                        cout << start << " " << d << endl;
+                        //cout << start << " " << d << endl;
+                        v.push_back({start, d});
                     }
                 }
                 else{
@@ -76,7 +78,12 @@ int main(){
         }
     }
     if(!any){
-        cout << "NONE" << endl;
+        fout << "NONE" << endl;
+    }
+    else{
+        for(pair<int, int> x : v){
+            fout << x.first << " " << x.second << endl;
+        }
     }
 
 }
