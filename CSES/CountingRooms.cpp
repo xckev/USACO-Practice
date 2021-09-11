@@ -72,9 +72,7 @@ int main(){
     int result = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            //cout << "Square " << i << ", " << j << endl;
-            //cout << "type: " << grid[i][j] << endl;
-            //cout << "visited: " << visited[i][j] << endl;
+
             if(grid[i][j] == 1 && !visited[i][j]){
                 search(i, j);
                 result++;
