@@ -12,6 +12,7 @@ TASK: ariprog
 #include <map>
 #include <math.h>
 #include <set>
+#include <vector>
 #include <fstream>
 using namespace std;
 
@@ -20,9 +21,9 @@ bool bisquare[125000];
 set<int> good;
 
 int main(){
-    ofstream fout ("ariprog.out");
-    ifstream fin ("ariprog.in");
-    fin >> n >> m;
+    //ofstream fout ("ariprog.out");
+    //ifstream fin ("ariprog.in");
+    cin >> n >> m;
 
     for(int i = 0; i <= m; i++){
         for(int j = i; j <= m; j++){
@@ -50,14 +51,14 @@ int main(){
                     elemnum++;
                     if(elemnum == n){
                         any = true;
-                        fout << start << " " << d << endl;
+                        cout << start << " " << d << endl;
                     }
                 }
             }
         }
     }
     if(!any){
-        fout << "NONE" << endl;
+        cout << "NONE" << endl;
     }
 
 }
