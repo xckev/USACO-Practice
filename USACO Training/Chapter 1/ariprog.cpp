@@ -32,7 +32,7 @@ int main(){
             good.insert(ind);
         }
     }
-    cout <<  "size: " << good.size() << endl;
+    //cout <<  "size: " << good.size() << endl;
     //sort(good.begin(), good.end());
     //int maxm = (m*m)/3;
 
