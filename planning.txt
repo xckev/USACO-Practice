@@ -1,0 +1,5 @@
+Week of 9/13
+* Readings: Chapter 7 of CPH book: Dynamic Programming
+            Section 2.2 of USACO Training
+* Coding: CSES problems on Dynamic Programming
+          Section 2.2 of USACO Training
