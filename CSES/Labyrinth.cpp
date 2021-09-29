@@ -7,7 +7,7 @@
 #include <fstream>
 using namespace std;
 
-//BFS
+//BFS search nearest answer
 
 int n, m;
 int grid[1001][1001];

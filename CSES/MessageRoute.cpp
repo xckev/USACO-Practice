@@ -7,6 +7,8 @@
 #include <fstream>
 using namespace std;
 
+//BFS Search nearest answer
+
 int n, m;
 vector<int> graph[100001];
 bool visited[100001];
