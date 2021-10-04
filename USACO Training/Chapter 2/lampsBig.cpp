@@ -1,4 +1,4 @@
-/*
+ /*
 ID: xckevin1
 LANG: C++
 TASK: lamps
@@ -17,9 +17,7 @@ using namespace std;
 int n, c;
 vector<int> on;
 vector<int> off;
-//set<vector<int>> storage[10001];
-set<vector<int>> previous;
-set<vector<int>> current;
+set<vector<int>> storage[10001];
 
 bool check(vector<int> lamps){
     for(int x : on){
@@ -81,35 +79,31 @@ int main(){
         fin >> e;
     }
     vector<int> v(n+1, 1);
-    previous.insert(v);
+    storage[0].insert(v);
 
     set<vector<int>> ans;
 
     for(int i = 1; i <= c; i++){
-        for(vector<int> elem : previous){
-            /*
+        for(vector<int> elem : storage[i-1]){
+
             if((c-(i-1))%2 == 0){
                 if(check(elem)){
-                    cout << "early insert" << endl;
                     ans.insert(elem);
                 }
             }
-            */
-            current.insert(button1(elem));      
+            storage[i].insert(button1(elem));
             
-            current.insert(button2(elem));
+            storage[i].insert(button2(elem));
 
-            current.insert(button3(elem));
+            storage[i].insert(button3(elem));
 
-            current.insert(button4(elem));
+            storage[i].insert(button4(elem));
 
         }
-        previous = current;
-        current = set<vector<int>>();
     }
 
     //check all before deciding impossible or not
-    for(vector<int> elem : previous){
+    for(vector<int> elem : storage[c]){
         if(check(elem)){
             ans.insert(elem);
         }
