@@ -16,28 +16,27 @@ using namespace std;
 
 int v;
 long long n;
+int arr[25];
 long long storage[10001];
 
 int main(){
-    cin >> v >> n;
-    vector<int> coins(v, 0);
+    ofstream fout ("money.out");
+    ifstream fin ("money.in");
+    fin >> v >> n;
     for(int i = 0; i < v; i++){
-        int e;
-        cin >> e;
-        coins.push_back(e);
+        fin >> arr[i];
     }
 
     storage[0] = 1;
 
-    for(int i = 1; i <= n; i++){
-        for(int e : coins){
-            if(i - e >= 0){
-                storage[i] += storage[i-e];
+    for(int i = 0; i < v; i++){
+        for(int j = 0; j <= n; j++){
+            if(arr[i] + j <= n){
+                storage[j + arr[i]] += storage[j];
             }
         }
-        cout << "ways to make " << i << ": " << storage[i] << endl;
     }
 
-    cout << storage[n] << endl;
+    fout << storage[n] << endl;
     
 }
