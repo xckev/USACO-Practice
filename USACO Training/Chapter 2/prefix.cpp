@@ -4,6 +4,8 @@ LANG: C++
 TASK: prefix
 */
 
+//dynamic programming :)
+
 #include <iostream>
 #include <algorithm>
 #include <set>
@@ -38,7 +40,7 @@ int main(){
     target.erase(remove(target.begin(), target.end(), '\n'), target.end());
     N = target.size();
     
-    vector<bool> storage(N+1);
+    vector<bool> storage(N+1, false);
     storage[0] = true;
     for(int i = 0; i <= N; i++){
         if(storage[i]){
