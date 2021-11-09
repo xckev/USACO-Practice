@@ -4,7 +4,7 @@ LANG: C++
 TASK: agrinet
 */
 
-//prims  algorithm minimal spanning tree
+// minimal spanning tree
 
 #include <iostream>
 #include <algorithm>
