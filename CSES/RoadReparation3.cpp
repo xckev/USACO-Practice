@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//prims (doesnt work bc the cses compiler is gay)
+//PRIM'S ALGORITHM - RESEMBLES DIJKSTRA
 
 int n, m;
 vector<pair<int, int>> adj[100005];
