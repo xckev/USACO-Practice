@@ -8,11 +8,11 @@ vector<pair<long long, int>> adj[100005];
 
 long long prims(){
     long long total = 0;
-    vector<long long> min(n, LLONG_MAX); //keeps track of minimum edge weight connected to a vertex
+    vector<long long> min(n+1, LLONG_MAX); //keeps track of minimum edge weight connected to a vertex
     min[1] = 0;
     set<pair<long long, int>> q; //cannot use real queue because must modify contents
     q.insert({0, 1});
-    vector<bool> visited(n, false);
+    vector<bool> visited(n+1, false);
 
     for(int i = 0; i < n; i++){
         if(q.empty()){
