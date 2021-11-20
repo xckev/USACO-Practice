@@ -34,44 +34,50 @@ bool cmp(pair<string, int> a, pair<string, int> b){
 }
 
 void sortnsolve(ofstream &fout){
-  
+ 
     vector<pair<string, int>> A;
-  
-    for (auto it : M) {
-        A.push_back(it);
+ 
+    for (pair<string, int> p : M) {
+        A.push_back(p);
     }
-  
+ 
     sort(A.begin(), A.end(), cmp);
-  
+    int asize = A.size();
+    cout << "sorting done!" << endl;
+
     //print stuf here
     int counter = 0;
     int i = 0;
     int lastfreq;
-    while(counter < N && i < A.size()){
+    while(counter < N && i < asize){
         counter++;
 
         pair<string, int> p = A[i];
         fout << p.second << endl;
         lastfreq = p.second;
+
         int numsameline = 0;
-        while(i < A.size() && p.second == lastfreq){
+        while(i < asize && p.second == lastfreq){
             fout << p.first;
             numsameline++;
-            if(i+1 < A.size() && A[i+1].second == lastfreq){
-                if(numsameline % 6 == 0){
-                    fout << endl;
+            if(i+1 < asize) {
+                if( A[i+1].second == lastfreq){
+                    if(numsameline % 6 == 0){
+                        fout << endl;
+                    }
+                    else{
+                        fout << " ";
+                    }
                 }
-                else{
-                    fout << " ";
-                }
+                p = A[i+1];
             }
             i++;
-            p = A[i];
-            
         }
         fout << endl;
+
+        cout << "freq = " << lastfreq << endl;
     }
-    
+    cout << "Finished printing" << endl;
 }
 
 int main(){
