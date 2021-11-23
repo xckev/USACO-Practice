@@ -19,7 +19,7 @@ int main(){
 	for (int x : T) {
 		prefix_sum += x;
 
-        ans += sums[prefix_sum - X];
+        ans += sums[prefix_sum - X]; //check prefix_sum - X to see if there are smaller prefix sums to subtract from current prefix sum to achieve X
 
         sums[prefix_sum]++;
     }

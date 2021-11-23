@@ -1,33 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N;
-
-/*
-int main(){
-    cin >> N;
-    vector<long long> sums(N+1);
-
-    sums[0] = 0;
-    for(int i = 0; i < N; i++){
-        int e;
-        cin >> e;
-        sums[i+1] = sums[i] + e;
-    }
-
-    int ans = 0;
-    for(int len = 1; len <= N; len++){
-        for(int start = 1; start + len - 1 <= N; start++){
-            long long s = sums[start+len-1] - sums[start-1];
-
-            if(s % N == 0){
-                ans++;
-            }
-        }
-    }
-    cout << ans << endl;
-}
-*/
 int main() {
 
 	int N;
@@ -40,7 +13,7 @@ int main() {
 		int a;
 		cin >> a;
 		psums += a;
-		// Remember to account for negative sums
+		// to account for negative sums
 		M[(psums % N + N) % N]++;
 	}
 
