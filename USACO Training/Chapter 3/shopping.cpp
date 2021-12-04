@@ -4,7 +4,7 @@ LANG: C++
 TASK: shopping
 */
 
-//dynamic prog
+//dynamic prog (knapsack)
 
 #include <bits/stdc++.h>
 using namespace std;
