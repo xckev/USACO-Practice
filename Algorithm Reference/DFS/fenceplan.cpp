@@ -6,6 +6,8 @@
 #include <fstream>
 using namespace std;
 
+//2019 open
+
 int n, m;
 
 int xcoord[100001];

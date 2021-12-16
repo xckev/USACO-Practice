@@ -7,6 +7,8 @@
 #include <fstream>
 using namespace std;
 
+//flood fill
+
 int n, m;
 int grid[1001][1001];
 bool visited[1001][1001];
