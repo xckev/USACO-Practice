@@ -40,8 +40,24 @@ int main(){
     fill(stopped, stopped + N, false);
     int numstopped[N];
     fill(numstopped, numstopped + N, 0);
+    
     for(int i : easters){
         for(int j : northers){
+            if(!stopped[i] && !stopped[j] && xcoords[j] > xcoords[i] && ycoords[i] > ycoords[j]){
+                if (xcoords[j] - xcoords[i] > ycoords[i] - ycoords[j]) {
+                    stopped[i] = true;
+                    numstopped[j] += 1 + numstopped[i];
+                }
+                else if (ycoords[i] - ycoords[j] > xcoords[j] - xcoords[i]) {
+                    stopped[j] = true;
+                    numstopped[i] += 1 + numstopped[j];
+                }
+            }
+        }
+    }
+    /*
+    for(int j : northers){
+        for(int i : easters){
             if(!stopped[i] && !stopped[j] && xcoords[j] > xcoords[i] && ycoords[i] > ycoords[j]){
                 if (xcoords[j] - xcoords[i] > ycoords[i] - ycoords[j]) {
                     stopped[i] = true;
@@ -53,7 +69,7 @@ int main(){
                 }
             }
         }
-    }
+    }*/
 
     for(int i = 0; i < N; i++){
         cout << numstopped[i] << endl;

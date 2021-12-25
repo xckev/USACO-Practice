@@ -8,6 +8,8 @@
 #include <fstream>
 using namespace std;
 
+//jan 2014
+
 int n, m;
 int startx, starty;
 int minHeight = 999999999;
