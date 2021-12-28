@@ -1,0 +1,4 @@
+Prefix Sums
+1. complementary counting
+ - rectangles with minimum value 100 = rects with min of at least 100 - rects with min of at least 101 (silver 2021 feb #3)
+2.

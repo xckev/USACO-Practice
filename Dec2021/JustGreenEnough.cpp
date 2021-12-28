@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
+//feb 2021
+
 int N;
 bool ok[1000][1000];
  

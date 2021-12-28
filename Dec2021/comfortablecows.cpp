@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//feb 2021
+
 int n;
 bool cows[3000][3000];
 //int xcoords[100001];
