@@ -18,8 +18,6 @@ bool seen[1000000];
 //calculate perimeter added
 int perimchange(int cellnum){
     int result = 4;
-    int col = cellnum % n;
-    int row = cellnum / n;
 
     for(int e : adj[cellnum]){
         if(seen[e]){
