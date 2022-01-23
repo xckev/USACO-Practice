@@ -30,7 +30,6 @@ void floodfill(int x, int y){
 }
 
 void solve(int x, int y){
-    //cout << "on room " << x << ", " << y << endl;
     seen[x][y] = true;
     if(switches[x][y].empty()){
         return;
@@ -38,10 +37,8 @@ void solve(int x, int y){
     for(pair<int, int> p : switches[x][y]){
         if(grid[p.first][p.second] == false){
             grid[p.first][p.second] = true;
-            //cout << "turned on room " << p.first << ", " << p.second << endl;
             counter++;
             best = max(best, counter);
-            //cout << "most on: " << best << endl;
         }
     }
     mycomponent.clear();
@@ -52,21 +49,16 @@ void solve(int x, int y){
         int a = p.first;
         int b = p.second;
         if(a >= 1 && a <= n && b >= 1 && b <= n){
-            //cout << "at room " << a << ", " << b << " of component " << endl;
             if(a > 1 && grid[a-1][b] && !seen[a-1][b]){
-                //cout << "going in room " << a-1 << ", " << b << endl;
                 solve(a-1, b);
             }
             if(a < n && grid[a+1][b] && !seen[a+1][b]){
-                //cout << "going in room " << a+1 << ", " << b << endl;
                 solve(a+1, b);
             }
             if(b > 1 && grid[a][b-1] && !seen[a][b-1]){
-                //cout << "going in room " << a << ", " << b-1 << endl;
                 solve(a, b-1);
             }
             if(b < n && grid[a][b+1] && !seen[a][b+1]){
-                //cout << "going in room " << a << ", " << b+1 << endl;
                 solve(a, b+1);
             }
         }
