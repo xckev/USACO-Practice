@@ -20,10 +20,10 @@ int main(){
     for(int i = 0; i < n; i++){
         fin >> e;
         cows.push_back(e);
-    }
+    }  
     sort(cows.rbegin(), cows.rend());
 
-    int curr = 0;
+    int curr = 0; 
     for(int i = 0; i < n; i++){
         e = cows[i];
         if(e >= curr){
