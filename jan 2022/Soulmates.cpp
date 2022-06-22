@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//KEY IDEAS: if we multiply, we do not want to divide again
+//Division/addition first, then multiplication/addition
+
 int n;
-//long long callcount;
 long long solve(long long a, long long b){
-    //callcount++;
     if(a > b){
         return 99999999;
     }
@@ -30,12 +31,12 @@ int main(){
         long long a, b;
         cin >> a >> b;
 
-        //callcount = 0;
 
         long long best = solve(a, b);
         long long firstnum = a;
         long long numdiv = 0;
         long long numadd = 0;
+
         while(firstnum > 1){
             if(firstnum % 2 == 0){
                 firstnum /= 2;
@@ -47,7 +48,6 @@ int main(){
                 numadd++;
             }
         }
-        //cout << "callcount: " << callcount << endl;
 
         cout << best << endl;
     }
